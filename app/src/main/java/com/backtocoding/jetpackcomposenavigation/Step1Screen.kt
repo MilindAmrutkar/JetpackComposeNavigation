@@ -15,24 +15,22 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun HomeScreen(onProfile: () -> Unit) {
+fun Step1Screen(onNext: () -> Unit) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxSize().padding(16.dp),
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp)
+        horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        Text("Welcome to the Home Screen!")
+        Text("Welcome! Let's get started with onboarding.")
         Spacer(modifier = Modifier.height(24.dp))
-        Button(onClick = onProfile) {
-            Text("View Profile")
+        Button(onClick = onNext) {
+            Text("Next")
         }
     }
 }
 
-@Preview(showSystemUi = true, showBackground = true)
+@Preview (showBackground = true)
 @Composable
-fun HomeScreenPreview(modifier: Modifier = Modifier) {
-    HomeScreen {  }
+fun Step1ScreenPreview() {
+    Step1Screen {  }
 }
